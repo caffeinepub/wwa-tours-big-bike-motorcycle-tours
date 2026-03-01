@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import { SiFacebook, SiX, SiYoutube } from "react-icons/si";
+import { SiFacebook, SiWhatsapp, SiX, SiYoutube } from "react-icons/si";
 import type { Page } from "../App";
 
 interface FooterProps {
@@ -110,10 +110,28 @@ export default function Footer({ onNavigate }: FooterProps) {
                     +1 310 869 9142 (USA)
                   </a>
                   <a
+                    href="https://wa.me/13108699142"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors mb-1"
+                  >
+                    <SiWhatsapp className="w-3 h-3" />
+                    WhatsApp
+                  </a>
+                  <a
                     href="tel:+41793511577"
                     className="block text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     +41 79 351 1577 (Switzerland)
+                  </a>
+                  <a
+                    href="https://wa.me/41793511577"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
+                  >
+                    <SiWhatsapp className="w-3 h-3" />
+                    WhatsApp
                   </a>
                 </div>
               </li>

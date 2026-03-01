@@ -36,42 +36,42 @@ const destinations = [
   {
     name: "Thailand",
     tagline: "Northern Mountains & Golden Triangle",
-    image: "/assets/generated/dest-thailand.dim_900x600.jpg",
+    image: "/assets/IMG-20181121-WA0002.jpg",
     filter: "thailand",
   },
   {
     name: "Europe",
     tagline: "Swiss Alps & Alpine Passes",
-    image: "/assets/generated/dest-europe.dim_900x600.jpg",
+    image: "/assets/IMG-20230919-WA0002.jpg",
     filter: "europe",
   },
   {
     name: "USA",
     tagline: "Pacific Coast & Monument Valley",
-    image: "/assets/generated/dest-usa.dim_900x600.jpg",
+    image: "/assets/IMG-20260221-WA0006.jpg",
     filter: "usa",
   },
 ];
 
 const galleryImages = [
   {
-    src: "/assets/generated/gallery-riders.dim_800x600.jpg",
-    alt: "Riders celebrating at mountain viewpoint",
+    src: "/assets/IMG-20181122-WA0020.jpg",
+    alt: "Riders on mountain road — Northern Thailand",
     className: "col-span-2 row-span-2",
   },
   {
-    src: "/assets/generated/gallery-guide.dim_800x600.jpg",
-    alt: "Professional tour guide",
-    className: "col-span-1 row-span-1",
-  },
-  {
-    src: "/assets/generated/gallery-bikes.dim_800x600.jpg",
+    src: "/assets/FB_IMG_1679460916886.jpg",
     alt: "Premium adventure bikes",
     className: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/generated/gallery-europe.dim_800x600.jpg",
-    alt: "Alpine motorcycle adventure",
+    src: "/assets/IMG-20181128-WA0090.jpg",
+    alt: "Tour group photo",
+    className: "col-span-1 row-span-1",
+  },
+  {
+    src: "/assets/IMG-20181129-WA0046.jpg",
+    alt: "Riding through the countryside",
     className: "col-span-2 row-span-1",
   },
 ];

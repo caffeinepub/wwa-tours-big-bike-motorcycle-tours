@@ -32,10 +32,10 @@ const difficultyConfig: Record<
 };
 
 const destinationImages: Record<Destination, string> = {
-  thailand: "/assets/generated/dest-thailand.dim_900x600.jpg",
-  europe: "/assets/generated/dest-europe.dim_900x600.jpg",
-  usa: "/assets/generated/dest-usa.dim_900x600.jpg",
-  asia: "/assets/generated/dest-thailand.dim_900x600.jpg",
+  thailand: "/assets/IMG-20181123-WA0022.jpg",
+  europe: "/assets/IMG-20230919-WA0003.jpg",
+  usa: "/assets/IMG-20260221-WA0007.jpg",
+  asia: "/assets/IMG-20181125-WA0027.jpg",
 };
 
 export default function TourCard({ tour, onSelect }: TourCardProps) {

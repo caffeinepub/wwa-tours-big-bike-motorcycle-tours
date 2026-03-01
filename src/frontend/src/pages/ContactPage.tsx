@@ -6,6 +6,7 @@ import { CheckCircle, Clock, Mail, MessageSquare, Phone } from "lucide-react";
 import { Loader2 } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { SiWhatsapp } from "react-icons/si";
 import { SiFacebook, SiX, SiYoutube } from "react-icons/si";
 import { toast } from "sonner";
 import type { Page } from "../App";
@@ -148,10 +149,28 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                       +1 310 869 9142 (USA)
                     </a>
                     <a
+                      href="https://wa.me/13108699142"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors mb-2"
+                    >
+                      <SiWhatsapp className="w-3 h-3" />
+                      WhatsApp
+                    </a>
+                    <a
                       href="tel:+41793511577"
                       className="block text-sm text-foreground hover:text-primary transition-colors"
                     >
                       +41 79 351 1577 (Switzerland)
+                    </a>
+                    <a
+                      href="https://wa.me/41793511577"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
+                    >
+                      <SiWhatsapp className="w-3 h-3" />
+                      WhatsApp
                     </a>
                   </div>
                 </div>
