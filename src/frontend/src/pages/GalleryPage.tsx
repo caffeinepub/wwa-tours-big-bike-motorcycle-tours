@@ -1,0 +1,246 @@
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { X, ZoomIn } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
+import type { Page } from "../App";
+import Footer from "../components/Footer";
+
+interface GalleryPageProps {
+  onNavigate: (page: Page) => void;
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const tourGallery = [
+  {
+    src: "/assets/generated/gallery-riders.dim_800x600.jpg",
+    alt: "Riders celebrating at mountain viewpoint",
+    caption: "Summit Celebration — Northern Thailand",
+    span: "col-span-2 row-span-2",
+  },
+  {
+    src: "/assets/generated/gallery-guide.dim_800x600.jpg",
+    alt: "Professional tour guide leading the way",
+    caption: "Expert Guide on Alpine Pass",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/assets/generated/gallery-europe.dim_800x600.jpg",
+    alt: "Alpine motorcycle adventure",
+    caption: "European Alps — Summer Tour 2023",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/assets/generated/dest-thailand.dim_900x600.jpg",
+    alt: "Northern Thailand mountain roads",
+    caption: "Northern Thailand Loop",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/assets/generated/dest-europe.dim_900x600.jpg",
+    alt: "Swiss Alpine pass",
+    caption: "Swiss Alps — Gotthard Pass",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/assets/generated/dest-usa.dim_900x600.jpg",
+    alt: "American Southwest desert riding",
+    caption: "Monument Valley, USA",
+    span: "col-span-2 row-span-1",
+  },
+];
+
+const bikeGallery = [
+  {
+    src: "/assets/generated/gallery-bikes.dim_800x600.jpg",
+    alt: "Premium adventure bikes lined up",
+    caption: "Our Fleet — BMW GS & Honda Africa Twin",
+    span: "col-span-2 row-span-2",
+  },
+  {
+    src: "/assets/generated/gallery-guide.dim_800x600.jpg",
+    alt: "Guide on BMW GS",
+    caption: "BMW GS 850 — The Adventure King",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: "/assets/generated/gallery-riders.dim_800x600.jpg",
+    alt: "Group of adventure motorcycles",
+    caption: "Small Group — Maximum 8 Riders",
+    span: "col-span-1 row-span-1",
+  },
+];
+
+interface GalleryItem {
+  src: string;
+  alt: string;
+  caption: string;
+  span: string;
+}
+
+function GalleryGrid({
+  items,
+  onOpen,
+}: {
+  items: GalleryItem[];
+  onOpen: (item: GalleryItem) => void;
+}) {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={stagger}
+      className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[160px] md:auto-rows-[180px]"
+    >
+      {items.map((item) => (
+        <motion.div
+          key={item.src}
+          variants={fadeUp}
+          className={`${item.span} relative overflow-hidden rounded-sm group cursor-pointer`}
+          onClick={() => onOpen(item)}
+        >
+          <img
+            src={item.src}
+            alt={item.alt}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <ZoomIn className="w-8 h-8 text-white" />
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <p className="text-xs font-display font-medium text-white/90">
+              {item.caption}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+}
+
+export default function GalleryPage({ onNavigate }: GalleryPageProps) {
+  const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Page header */}
+      <div
+        className="relative pt-32 pb-16 overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, oklch(0.15 0.02 40) 0%, oklch(0.12 0.008 30) 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 60% 50% at 50% 0%, oklch(0.72 0.19 52 / 0.3), transparent)",
+          }}
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="font-display font-bold text-xs tracking-widest uppercase text-primary mb-3"
+          >
+            Life on the Road
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="font-display font-black text-5xl md:text-6xl text-foreground mb-4"
+          >
+            Gallery
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-muted-foreground max-w-md mx-auto"
+          >
+            A glimpse into the adventures that await. From Thailand's mountain
+            roads to Europe's Alpine passes.
+          </motion.p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-12">
+        <Tabs defaultValue="tours" className="w-full">
+          <TabsList className="mb-8 bg-muted/50 border border-border/50 p-1">
+            <TabsTrigger
+              value="tours"
+              className="font-display font-bold text-xs tracking-wider uppercase data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              Tour Gallery
+            </TabsTrigger>
+            <TabsTrigger
+              value="bikes"
+              className="font-display font-bold text-xs tracking-wider uppercase data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              Bike Gallery
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="tours">
+            <GalleryGrid items={tourGallery} onOpen={setLightboxItem} />
+          </TabsContent>
+          <TabsContent value="bikes">
+            <GalleryGrid items={bikeGallery} onOpen={setLightboxItem} />
+          </TabsContent>
+        </Tabs>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setLightboxItem(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="relative max-w-4xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setLightboxItem(null)}
+                className="absolute -top-12 right-0 p-2 text-white/60 hover:text-white transition-colors"
+                aria-label="Close lightbox"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <img
+                src={lightboxItem.src}
+                alt={lightboxItem.alt}
+                className="w-full h-auto rounded-sm shadow-2xl"
+              />
+              <p className="text-sm font-display text-white/70 text-center mt-4">
+                {lightboxItem.caption}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <Footer onNavigate={onNavigate} />
+    </div>
+  );
+}
