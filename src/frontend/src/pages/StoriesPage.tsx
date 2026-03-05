@@ -2,6 +2,14 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
 import { motion } from "motion/react";
 import type { Page } from "../App";
+import {
+  DEST_THAILAND,
+  GALLERY_11,
+  GALLERY_13,
+  GALLERY_2023_A,
+  GALLERY_EUROPE,
+  GALLERY_RIDERS,
+} from "../assets/images";
 import Footer from "../components/Footer";
 
 interface StoriesPageProps {
@@ -35,7 +43,7 @@ Our guides Marco and the team knew every back road, every hidden waterfall, ever
     date: "December 9, 2019",
     tag: "Thailand",
     readTime: "5 min read",
-    image: "/assets/generated/gallery-riders.dim_800x600.jpg",
+    image: GALLERY_13,
   },
   {
     title: "Motorcycle RCMC European Tour June 17-30, 2019",
@@ -53,7 +61,7 @@ The final day — a sweeping ride through the Bavarian Alps into Munich — was 
     date: "December 28, 2019",
     tag: "Europe",
     readTime: "6 min read",
-    image: "/assets/generated/gallery-europe.dim_800x600.jpg",
+    image: GALLERY_11,
   },
   {
     title: "Thailand Golden Triangle — Riding the Roads Less Traveled",
@@ -71,7 +79,7 @@ Our next Golden Triangle tour departs in February 2025. Contact us to secure you
     date: "November 2023",
     tag: "Thailand",
     readTime: "7 min read",
-    image: "/assets/generated/dest-thailand.dim_900x600.jpg",
+    image: GALLERY_2023_A,
   },
 ];
 

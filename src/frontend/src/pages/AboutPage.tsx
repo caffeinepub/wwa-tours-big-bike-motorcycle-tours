@@ -1,6 +1,7 @@
 import { Award, Globe, MapPin, Shield, Users } from "lucide-react";
 import { motion } from "motion/react";
 import type { Page } from "../App";
+import { GALLERY_9, GALLERY_13, GALLERY_2023_A } from "../assets/images";
 import Footer from "../components/Footer";
 
 interface AboutPageProps {
@@ -15,6 +16,7 @@ const guides = [
     bio: "20+ years riding experience across 40+ countries. Born in Switzerland, Marco brings Global Swissness to every tour — meticulous route planning, flawless logistics, and an infectious passion for the open road.",
     years: "20+ yrs experience",
     flag: "🇨🇭",
+    photo: null,
   },
   {
     initials: "CW",
@@ -23,6 +25,7 @@ const guides = [
     bio: "Pacific Coast and American Southwest specialist. Chris has ridden every major US route and knows the back roads that make the difference between a road trip and a life-changing adventure.",
     years: "15 yrs experience",
     flag: "🇺🇸",
+    photo: null,
   },
   {
     initials: "AT",
@@ -31,6 +34,7 @@ const guides = [
     bio: "Alpine passes expert. Alex has guided over 200 riders through the Swiss, French, and Italian Alps. His intimate knowledge of Europe's mountain roads turns every tour into a masterclass.",
     years: "12 yrs experience",
     flag: "🇪🇺",
+    photo: null,
   },
 ];
 
@@ -133,8 +137,8 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
           <motion.div variants={fadeUp} className="relative">
             <div className="rounded-sm overflow-hidden aspect-[4/3] shadow-2xl">
               <img
-                src="/assets/generated/gallery-europe.dim_800x600.jpg"
-                alt="Alpine motorcycle adventure"
+                src={GALLERY_13}
+                alt="WWA Tours crew on adventure"
                 className="w-full h-full object-cover"
               />
             </div>

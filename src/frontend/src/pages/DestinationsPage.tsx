@@ -4,6 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import type { Page } from "../App";
+import { DEST_EUROPE, DEST_THAILAND, DEST_USA } from "../assets/images";
 import { Destination } from "../backend.d";
 import Footer from "../components/Footer";
 import TourCard from "../components/TourCard";
@@ -29,7 +30,7 @@ const destinationData = [
     key: Destination.thailand,
     name: "Thailand",
     subtitle: "Northern Mountains & Golden Triangle",
-    image: "/assets/generated/dest-thailand.dim_900x600.jpg",
+    image: DEST_THAILAND,
     description:
       "Northern Thailand is one of the world's most spectacular motorcycle destinations — winding mountain roads, ancient temples, hill tribe villages, and breathtaking scenery. Ride the legendary Mae Hong Son Loop, explore the Golden Triangle, and discover hidden jungle tracks that most tourists never see.",
     highlights: [
@@ -44,7 +45,7 @@ const destinationData = [
     key: Destination.europe,
     name: "Europe",
     subtitle: "Swiss Alps & Alpine Passes",
-    image: "/assets/generated/dest-europe.dim_900x600.jpg",
+    image: DEST_EUROPE,
     description:
       "Ride the legendary Alpine passes of Switzerland, France, Italy and beyond. Precision-crafted routes with Global Swissness at the heart of every mile. From the Gotthard Pass to the Col de la Bonnette, Europe's motorcycle roads are second to none.",
     highlights: [
@@ -59,7 +60,7 @@ const destinationData = [
     key: Destination.usa,
     name: "USA",
     subtitle: "Pacific Coast & American Southwest",
-    image: "/assets/generated/dest-usa.dim_900x600.jpg",
+    image: DEST_USA,
     description:
       "From the Pacific Coast Highway to Monument Valley — America's epic roads await. Experience the freedom of the open road on premium big bikes. Ride legendary routes through the American Southwest, Coastal California, and the iconic desert landscapes of the West.",
     highlights: [

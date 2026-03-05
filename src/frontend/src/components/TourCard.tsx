@@ -1,7 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, Clock, DollarSign, MapPin, Users } from "lucide-react";
+import { Banknote, Calendar, Clock, MapPin, Users } from "lucide-react";
+import {
+  DEST_ASIA,
+  DEST_EUROPE,
+  DEST_THAILAND,
+  DEST_USA,
+} from "../assets/images";
 import type { Destination, Difficulty, Tour } from "../backend.d";
 
 interface TourCardProps {
@@ -32,10 +38,10 @@ const difficultyConfig: Record<
 };
 
 const destinationImages: Record<Destination, string> = {
-  thailand: "/assets/IMG-20181123-WA0022.jpg",
-  europe: "/assets/IMG-20230919-WA0003.jpg",
-  usa: "/assets/IMG-20260221-WA0007.jpg",
-  asia: "/assets/IMG-20181125-WA0027.jpg",
+  thailand: DEST_THAILAND,
+  europe: DEST_EUROPE,
+  usa: DEST_USA,
+  asia: DEST_ASIA,
 };
 
 export default function TourCard({ tour, onSelect }: TourCardProps) {
@@ -110,12 +116,12 @@ export default function TourCard({ tour, onSelect }: TourCardProps) {
 
         <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/50">
           <div className="flex items-center gap-1">
-            <DollarSign className="w-4 h-4 text-primary" />
+            <Banknote className="w-4 h-4 text-primary" />
+            <span className="text-xs text-muted-foreground font-bold mr-0.5">
+              CHF
+            </span>
             <span className="font-display font-black text-xl text-primary">
               {Number(tour.priceUSD).toLocaleString()}
-            </span>
-            <span className="text-xs text-muted-foreground font-medium">
-              USD
             </span>
           </div>
           <Button

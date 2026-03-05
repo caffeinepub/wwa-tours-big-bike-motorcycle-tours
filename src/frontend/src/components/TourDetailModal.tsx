@@ -12,10 +12,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
 import {
   AlertCircle,
+  Banknote,
   Calendar,
   CheckCircle,
   Clock,
-  DollarSign,
   MapPin,
   MessageSquare,
   Users,
@@ -187,8 +187,8 @@ export default function TourDetailModal({
                       label: `Max ${tour.maxGroupSize}`,
                     },
                     {
-                      icon: DollarSign,
-                      label: `$${Number(tour.priceUSD).toLocaleString()} USD`,
+                      icon: Banknote,
+                      label: `CHF ${Number(tour.priceUSD).toLocaleString()}`,
                     },
                   ].map(({ icon: Icon, label }) => (
                     <div

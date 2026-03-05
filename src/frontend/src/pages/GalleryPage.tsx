@@ -3,6 +3,40 @@ import { X, ZoomIn } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import type { Page } from "../App";
+import {
+  GALLERY_1,
+  GALLERY_2,
+  GALLERY_3,
+  GALLERY_4,
+  GALLERY_5,
+  GALLERY_6,
+  GALLERY_7,
+  GALLERY_8,
+  GALLERY_9,
+  GALLERY_10,
+  GALLERY_11,
+  GALLERY_12,
+  GALLERY_13,
+  GALLERY_14,
+  GALLERY_15,
+  GALLERY_16,
+  GALLERY_17,
+  GALLERY_18,
+  GALLERY_19,
+  GALLERY_20,
+  GALLERY_21,
+  GALLERY_22,
+  GALLERY_2023_A,
+  GALLERY_2023_B,
+  GALLERY_2026_A,
+  GALLERY_2026_B,
+  GALLERY_BIKES,
+  GALLERY_FB_A,
+  GALLERY_FB_B,
+  GALLERY_FB_C,
+  GALLERY_FB_D,
+  GALLERY_FB_E,
+} from "../assets/images";
 import Footer from "../components/Footer";
 
 interface GalleryPageProps {
@@ -16,119 +50,203 @@ const fadeUp = {
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 };
 
 const tourGallery = [
   {
-    src: "/assets/IMG-20181121-WA0002.jpg",
-    alt: "Motorcycle tour riders on the road",
-    caption: "On the Road — Thailand Adventure",
+    src: GALLERY_1,
+    alt: "Riders on scenic mountain road — Northern Thailand 2018",
+    caption: "Mountain Roads — Northern Thailand",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/assets/IMG-20181122-WA0020.jpg",
-    alt: "Scenic mountain ride",
-    caption: "Mountain Roads — Northern Thailand",
+    src: GALLERY_2,
+    alt: "Tour group on the road — Northern Thailand",
+    caption: "On the Road Together",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181123-WA0022.jpg",
-    alt: "Group of riders",
-    caption: "Group Ride — Thailand Tour",
+    src: GALLERY_3,
+    alt: "Beautiful scenery — Northern Thailand ride",
+    caption: "Northern Thailand Scenery",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181124-WA0002.jpg",
-    alt: "Motorcycle adventure",
-    caption: "Adventure Awaits",
+    src: GALLERY_4,
+    alt: "Group adventure — WWA Tours Thailand",
+    caption: "Group Adventure",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181125-WA0027.jpg",
-    alt: "Riders at a scenic viewpoint",
-    caption: "Scenic Viewpoint Stop",
+    src: GALLERY_5,
+    alt: "Riding through Thailand landscape",
+    caption: "Thailand Landscape Ride",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181127-WA0003.jpg",
-    alt: "Winding mountain road",
-    caption: "Winding Roads — Northern Loop",
+    src: GALLERY_6,
+    alt: "Tour stop — local culture exploration",
+    caption: "Local Culture Stop",
     span: "col-span-2 row-span-1",
   },
   {
-    src: "/assets/IMG-20181128-WA0090.jpg",
-    alt: "Tour group photo",
-    caption: "The WWA Crew",
+    src: GALLERY_7,
+    alt: "Group photo — WWA Tours Thailand adventure",
+    caption: "WWA Tours — Thailand Adventure",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181129-WA0046.jpg",
-    alt: "Riding through the countryside",
-    caption: "Countryside Ride",
+    src: GALLERY_8,
+    alt: "Riding through Northern Thailand mountains",
+    caption: "Mountain Riding — Thailand",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181129-WA0058.jpg",
-    alt: "Motorcycle tour highlight",
-    caption: "Tour Highlights",
+    src: GALLERY_9,
+    alt: "Scenic route — Big bike adventure tour",
+    caption: "Scenic Route",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_10,
+    alt: "Adventure riders — Thailand tour 2018",
+    caption: "Adventure Riders",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_11,
+    alt: "Morning ride — Northern Thailand",
+    caption: "Morning Ride",
     span: "col-span-2 row-span-1",
   },
   {
-    src: "/assets/IMG-20230919-WA0002.jpg",
-    alt: "Recent tour adventure",
+    src: GALLERY_12,
+    alt: "Bikes lined up for departure — Thailand",
+    caption: "Ready to Ride",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_13,
+    alt: "The WWA crew — Thailand 2018",
+    caption: "The WWA Crew 2018",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_14,
+    alt: "Countryside ride — Northern Thailand",
+    caption: "Countryside Roads",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_15,
+    alt: "Hill tribe villages — Northern Thailand",
+    caption: "Hill Tribe Villages",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_16,
+    alt: "Thailand mountain pass adventure",
+    caption: "Mountain Pass",
+    span: "col-span-2 row-span-1",
+  },
+  {
+    src: GALLERY_17,
+    alt: "Riders — WWA Tours adventure",
+    caption: "Riders on Tour",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_18,
+    alt: "Group stop — Northern Thailand",
+    caption: "Group Stop",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_19,
+    alt: "Exploring Thailand on big bikes",
+    caption: "Exploring Thailand",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_20,
+    alt: "WWA Tours — Big bike adventure Thailand",
+    caption: "Big Bike Adventure",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_21,
+    alt: "Riders at scenic viewpoint — Thailand",
+    caption: "Scenic Viewpoint",
+    span: "col-span-2 row-span-1",
+  },
+  {
+    src: GALLERY_22,
+    alt: "Riding through Thailand valleys",
+    caption: "Valley Roads — Thailand",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_2023_A,
+    alt: "2023 Tour Season — Thailand adventure",
     caption: "2023 Tour Season",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20230919-WA0003.jpg",
-    alt: "Tour riders 2023",
-    caption: "2023 Riders",
+    src: GALLERY_2023_B,
+    alt: "Recent adventures — WWA Tours 2023",
+    caption: "Recent Adventures 2023",
+    span: "col-span-2 row-span-1",
+  },
+  {
+    src: GALLERY_2026_A,
+    alt: "Latest tour adventures 2026",
+    caption: "Latest Adventures 2026",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20260221-WA0006.jpg",
-    alt: "Latest tour photo",
-    caption: "Latest Adventures",
-    span: "col-span-2 row-span-1",
+    src: GALLERY_2026_B,
+    alt: "WWA Tours — 2026 Season",
+    caption: "2026 Season",
+    span: "col-span-1 row-span-1",
   },
 ];
 
 const bikeGallery = [
   {
-    src: "/assets/FB_IMG_1679460916886.jpg",
-    alt: "Big bikes on tour",
-    caption: "Our Fleet in Action",
+    src: GALLERY_BIKES,
+    alt: "Premium big bikes — WWA Tours fleet",
+    caption: "Our Premium Fleet",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/assets/FB_IMG_1679460884998.jpg",
-    alt: "Adventure motorcycles",
-    caption: "Premium Adventure Bikes",
+    src: GALLERY_FB_A,
+    alt: "Big bikes on tour — WWA Adventures",
+    caption: "Big Bikes on Tour",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/FB_IMG_1679460653634.jpg",
-    alt: "Motorcycle lineup",
-    caption: "Ready to Ride",
+    src: GALLERY_FB_B,
+    alt: "Adventure motorcycles — WWA Tours",
+    caption: "Adventure Motorcycles",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/FB_IMG_1679460599535.jpg",
-    alt: "Bikes at rest stop",
-    caption: "Rest Stop — Thailand",
+    src: GALLERY_FB_C,
+    alt: "Riders and bikes — group adventure",
+    caption: "Riders and Bikes",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/Screenshot_20220510-001212_Facebook.jpg",
-    alt: "Tour photo",
+    src: GALLERY_FB_D,
+    alt: "WWA Tours fleet ready for departure",
+    caption: "Ready for Departure",
+    span: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_FB_E,
+    alt: "WWA Tours in action — big bikes",
     caption: "WWA Tours in Action",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "/assets/IMG-20181125-WA0096.jpg",
-    alt: "Bikes on mountain road",
-    caption: "Bikes on the Mountain",
     span: "col-span-2 row-span-1",
   },
 ];
@@ -223,8 +341,8 @@ export default function GalleryPage({ onNavigate }: GalleryPageProps) {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground max-w-md mx-auto"
           >
-            A glimpse into the adventures that await. From Thailand's mountain
-            roads to Europe's Alpine passes.
+            Real photos from real tours. Thailand's mountain roads, the Alps,
+            and the open highways of the world.
           </motion.p>
         </div>
       </div>
@@ -234,12 +352,14 @@ export default function GalleryPage({ onNavigate }: GalleryPageProps) {
           <TabsList className="mb-8 bg-muted/50 border border-border/50 p-1">
             <TabsTrigger
               value="tours"
+              data-ocid="gallery.tours.tab"
               className="font-display font-bold text-xs tracking-wider uppercase data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               Tour Gallery
             </TabsTrigger>
             <TabsTrigger
               value="bikes"
+              data-ocid="gallery.bikes.tab"
               className="font-display font-bold text-xs tracking-wider uppercase data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               Bike Gallery
@@ -278,6 +398,7 @@ export default function GalleryPage({ onNavigate }: GalleryPageProps) {
                 onClick={() => setLightboxItem(null)}
                 className="absolute -top-12 right-0 p-2 text-white/60 hover:text-white transition-colors"
                 aria-label="Close lightbox"
+                data-ocid="gallery.lightbox.close_button"
               >
                 <X className="w-6 h-6" />
               </button>

@@ -13,6 +13,20 @@ import {
 import { motion } from "motion/react";
 import { useRef } from "react";
 import type { Page } from "../App";
+import {
+  DEST_EUROPE,
+  DEST_THAILAND,
+  DEST_USA,
+  GALLERY_1,
+  GALLERY_4,
+  GALLERY_8,
+  GALLERY_13,
+  GALLERY_16,
+  GALLERY_2023_A,
+  GALLERY_BIKES,
+  GALLERY_FB_A,
+  HERO_MAIN,
+} from "../assets/images";
 import Footer from "../components/Footer";
 import TourCard from "../components/TourCard";
 import { useGetTestimonials, useGetTours } from "../hooks/useQueries";
@@ -36,42 +50,52 @@ const destinations = [
   {
     name: "Thailand",
     tagline: "Northern Mountains & Golden Triangle",
-    image: "/assets/IMG-20181121-WA0002.jpg",
+    image: DEST_THAILAND,
     filter: "thailand",
   },
   {
     name: "Europe",
     tagline: "Swiss Alps & Alpine Passes",
-    image: "/assets/IMG-20230919-WA0002.jpg",
+    image: DEST_EUROPE,
     filter: "europe",
   },
   {
     name: "USA",
     tagline: "Pacific Coast & Monument Valley",
-    image: "/assets/IMG-20260221-WA0006.jpg",
+    image: DEST_USA,
     filter: "usa",
   },
 ];
 
 const galleryImages = [
   {
-    src: "/assets/IMG-20181122-WA0020.jpg",
+    src: GALLERY_1,
     alt: "Riders on mountain road — Northern Thailand",
     className: "col-span-2 row-span-2",
   },
   {
-    src: "/assets/FB_IMG_1679460916886.jpg",
-    alt: "Premium adventure bikes",
+    src: GALLERY_13,
+    alt: "The WWA crew on tour — Thailand 2018",
     className: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181128-WA0090.jpg",
-    alt: "Tour group photo",
+    src: GALLERY_BIKES,
+    alt: "Premium adventure bikes ready for the road",
     className: "col-span-1 row-span-1",
   },
   {
-    src: "/assets/IMG-20181129-WA0046.jpg",
-    alt: "Riding through the countryside",
+    src: GALLERY_4,
+    alt: "Group adventure stop — Northern Thailand",
+    className: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_8,
+    alt: "Riding through Northern Thailand mountains",
+    className: "col-span-1 row-span-1",
+  },
+  {
+    src: GALLERY_16,
+    alt: "Mountain pass — Thailand tour adventure",
     className: "col-span-2 row-span-1",
   },
 ];
@@ -114,8 +138,7 @@ export default function HomePage({ onNavigate, onSelectTour }: HomePageProps) {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage:
-              "url(/assets/generated/hero-main.dim_1600x900.jpg)",
+            backgroundImage: `url(${HERO_MAIN})`,
           }}
         />
         {/* Layered overlays */}
